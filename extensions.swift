@@ -13,7 +13,7 @@
 
 extension View {
     @ViewBuilder
-    func conditional<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+    func conditional<T: View>(_ condition: Bool, transform: (Self) -> T) -> some View {
         if condition {
             transform(self)
         } else {
